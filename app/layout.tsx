@@ -1,0 +1,31 @@
+import type { Metadata } from "next";
+import { Outfit } from "next/font/google";
+import "./globals.css";
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
+});
+
+export const metadata: Metadata = {
+  title: "Janvi Koriya | AI Software Developer & Full Stack Engineer",
+  description: "AI Software Developer building scalable web applications and GenAI features with a focus on high-performance digital products.",
+  keywords: ["Janvi Koriya", "AI Software Developer", "Full Stack Engineer", "GenAI", "React Developer", "Next.js"],
+};
+
+import BackgroundEffect from "@/components/BackgroundEffect";
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className={outfit.className}>
+        <BackgroundEffect />
+        {children}
+      </body>
+    </html>
+  );
+}
