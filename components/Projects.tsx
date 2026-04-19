@@ -70,36 +70,54 @@ const Projects = () => {
           width: '60px',
           height: '4px',
           background: 'var(--primary)',
-          margin: '0 auto 24px',
+          margin: '0 0 24px',
           borderRadius: '2px'
         }}></div>
-        <p style={{ color: 'var(--text-muted)', maxWidth: '600px', margin: '0 auto', fontSize: '1.1rem' }}>
+        <p style={{ color: 'var(--text-muted)', maxWidth: '100%', margin: '0', fontSize: '1.1rem' }}>
           A collection of digital experiences crafted with precision, focus, and modern engineering.
         </p>
       </motion.div>
 
-      <div className="grid-cols grid-3">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1
+            }
+          }
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid-cols grid-3"
+      >
         {projects.map((project, idx) => (
           <motion.div
             key={idx}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1, duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 30 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+            }}
+            whileHover={{ y: -10, transition: { duration: 0.3 } }}
             className="card"
             style={{
               padding: '0',
               overflow: 'hidden',
               display: 'flex',
               flexDirection: 'column',
-              height: '100%'
+              height: '100%',
+              transition: 'border-color 0.3s ease, box-shadow 0.3s ease'
             }}
           >
             <div style={{ height: '220px', overflow: 'hidden', position: 'relative' }}>
-              <img
+              <motion.img
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
                 src={project.image}
                 alt={project.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.7s cubic-bezier(0.4, 0, 0.2, 1)' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 className="project-image"
               />
               <div style={{
@@ -116,21 +134,26 @@ const Projects = () => {
             <div style={{ padding: '28px', flex: 1, display: 'flex', flexDirection: 'column' }}>
               <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginBottom: '16px' }}>
                 {project.tech.map(t => (
-                  <span key={t} style={{
-                    fontSize: '0.7rem',
-                    color: 'var(--primary)',
-                    background: 'rgba(0, 242, 255, 0.08)',
-                    padding: '4px 10px',
-                    borderRadius: '20px',
-                    border: '1px solid rgba(0, 242, 255, 0.15)',
-                    fontWeight: '500'
-                  }}>
+                  <motion.span 
+                    key={t} 
+                    whileHover={{ scale: 1.1, background: 'rgba(0, 242, 255, 0.15)' }}
+                    style={{
+                      fontSize: '0.7rem',
+                      color: 'var(--primary)',
+                      background: 'rgba(0, 242, 255, 0.08)',
+                      padding: '4px 10px',
+                      borderRadius: '20px',
+                      border: '1px solid rgba(0, 242, 255, 0.15)',
+                      fontWeight: '500',
+                      cursor: 'default'
+                    }}
+                  >
                     {t}
-                  </span>
+                  </motion.span>
                 ))}
               </div>
 
-              <h3 style={{ marginBottom: '12px', fontSize: '1.4rem' }}>{project.title}</h3>
+              <h3 style={{ marginBottom: '12px', fontSize: '1.4rem', color: '#fff' }}>{project.title}</h3>
               <p style={{
                 fontSize: '0.95rem',
                 color: 'var(--text-muted)',
@@ -141,7 +164,9 @@ const Projects = () => {
                 {project.desc}
               </p>
 
-              <a
+              <motion.a
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -162,11 +187,11 @@ const Projects = () => {
                 }}
               >
                 View Project <FaExternalLinkAlt size={14} />
-              </a>
+              </motion.a>
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       <style jsx>{`
         .card:hover .project-image {

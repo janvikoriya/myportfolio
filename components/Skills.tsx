@@ -38,21 +38,41 @@ const Skills = () => {
         <p style={{ color: '#aaa', fontSize: '1.1rem' }}>A comprehensive set of tools and technologies I use to bring ideas to life.</p>
       </motion.div>
 
-      <div className="grid-cols grid-2">
+      <motion.div 
+        variants={{
+          hidden: { opacity: 0 },
+          show: {
+            opacity: 1,
+            transition: {
+              staggerChildren: 0.1
+            }
+          }
+        }}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        className="grid-cols grid-2"
+      >
         {skillCategories.map((cat, idx) => (
           <motion.div
             key={cat.title}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1, duration: 0.5 }}
-            viewport={{ once: true }}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+            }}
             className="card"
           >
             <h3 style={{ marginBottom: '20px', fontSize: '1.3rem', color: 'var(--primary)' }}>{cat.title}</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
               {cat.skills.map(skill => (
-                <span
+                <motion.span
                   key={skill}
+                  whileHover={{ 
+                    scale: 1.05, 
+                    borderColor: 'var(--primary)', 
+                    color: '#fff',
+                    backgroundColor: 'rgba(0, 242, 255, 0.05)'
+                  }}
                   style={{
                     padding: '6px 14px',
                     borderRadius: '20px',
@@ -60,24 +80,17 @@ const Skills = () => {
                     border: '1px solid rgba(255,255,255,0.1)',
                     fontSize: '0.85rem',
                     color: '#ddd',
-                    transition: 'all 0.3s ease'
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'var(--primary)';
-                    e.currentTarget.style.color = '#fff';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
-                    e.currentTarget.style.color = '#ddd';
+                    transition: 'all 0.2s ease',
+                    cursor: 'default'
                   }}
                 >
                   {skill}
-                </span>
+                </motion.span>
               ))}
             </div>
           </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   );
 };

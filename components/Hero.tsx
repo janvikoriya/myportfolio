@@ -5,23 +5,8 @@ import Image from 'next/image';
 
 const Hero = () => {
   return (
-    <section style={{
-      minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-      overflow: 'hidden'
-    }}>
-
-      <div className="section-container" style={{
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        textAlign: 'center',
-        gap: '40px'
-      }}>
-
+    <section className="hero-section">
+      <div className="section-container hero-container">
         <div style={{ maxWidth: '800px' }}>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -71,6 +56,34 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      <style jsx>{`
+        .hero-section {
+          min-height: auto;
+          display: flex;
+          justify-content: center;
+          position: relative;
+          overflow: hidden;
+          padding: 100px 20px 80px;
+          align-items: flex-start;
+        }
+        
+        .hero-container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 40px;
+        }
+
+        @media (min-width: 768px) {
+          .hero-section {
+            min-height: 100vh;
+            align-items: center;
+            padding: 0;
+          }
+        }
+      `}</style>
     </section>
   );
 };

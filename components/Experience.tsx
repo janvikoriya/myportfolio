@@ -46,13 +46,13 @@ const Experience = () => {
               <span style={{ color: 'var(--primary)' }}>▹</span> Integrated AI & GenAI features to automate processes and improve user experience.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Building AI-powered, scalable web applications using React, Node.js, and MongoDB.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Building AI powered, scalable web applications using React, Node.js, and MongoDB.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Designed production-ready systems prioritizing performance and scalability.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Designed production ready systems prioritizing performance and scalability.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Collaborated cross-functionally to develop effective digital solutions.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Collaborated cross functionally to develop effective digital solutions.
             </li>
           </ul>
         </motion.div>
@@ -81,13 +81,19 @@ const Experience = () => {
 
           <ul style={{ listStyle: 'none', color: '#ccc', lineHeight: '1.7', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Implemented authentication and designed scalable API architecture to support increased user demand.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Developed a high performance website using Next.js with optimized routing and fast load times.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Developed responsive web apps and integrated CRUD-based backend systems to enhance user interaction.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Implemented responsive UI components to ensure seamless experience across all devices.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Contributed to AI-based automation concepts, improving development efficiency and innovation.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Structured reusable components and clean code architecture for scalability and maintainability.
+            </li>
+            <li style={{ display: 'flex', gap: '12px' }}>
+              <span style={{ color: 'var(--primary)' }}>▹</span> Optimized images, assets, and SEO to improve performance and visibility.
+            </li>
+            <li style={{ display: 'flex', gap: '12px' }}>
+              <span style={{ color: 'var(--primary)' }}>▹</span> Deployed and managed the website using platforms like Vercel.
             </li>
           </ul>
         </motion.div>
@@ -118,7 +124,7 @@ const Experience = () => {
               <span style={{ color: 'var(--primary)' }}>▹</span> Built and redesigned professional websites for international clients.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Developed product-based e-commerce platforms with integrated payment gateways.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Developed product based e commerce platforms with integrated payment gateways.
             </li>
           </ul>
         </motion.div>
