@@ -20,7 +20,7 @@ function generateSphere(count: number, radius: number) {
 }
 
 function StarField(props: any) {
-  const ref = useRef<any>()
+  const ref = useRef<any>(null)
   const [sphere] = useState(() => generateSphere(5000, 1.2))
 
   useFrame((state, delta) => {
