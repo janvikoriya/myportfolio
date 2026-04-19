@@ -53,10 +53,29 @@ const Navbar = () => {
       >
         <motion.div
           whileHover={{ scale: 1.02 }}
-          style={{ fontSize: '1.4rem', fontWeight: '800', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px', color: '#fff' }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          style={{ 
+            fontSize: '1.4rem', 
+            fontWeight: '800', 
+            cursor: 'pointer', 
+            display: 'flex', 
+            alignItems: 'center', 
+            gap: '12px', 
+            color: '#fff' 
+          }}
         >
-
-          JK.
+          <div style={{
+            width: '32px',
+            height: '32px',
+            position: 'relative'
+          }}>
+            <img 
+              src="/laptop.png" 
+              alt="Logo" 
+              style={{ width: '100%', height: '100%', objectFit: 'contain' }}
+            />
+          </div>
+          <span style={{ letterSpacing: '-1px' }}>Janvi<span style={{ color: 'var(--primary)' }}>.</span></span>
         </motion.div>
 
         {/* Desktop Links */}
@@ -80,7 +99,7 @@ const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="/resume.pdf"
+              href="/jk.pdf"
               target="_blank"
               download
               whileHover={{ scale: 1.05, background: '#f0f0f0' }}
@@ -175,7 +194,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="/resume.pdf"
+                href="/jk.pdf"
                 target="_blank"
                 download
                 style={{
