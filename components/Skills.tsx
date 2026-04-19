@@ -13,11 +13,11 @@ const skillCategories = [
   },
   {
     title: 'Tools & Concepts',
-    skills: ['Git/GitHub', 'Postman', 'VS Code', 'Agile', 'SDLC', 'REST APIs'],
+    skills: ['Git/GitHub', 'Postman', 'VS Code', 'QA Testing', 'Agile/SDLC', 'REST APIs'],
   },
   {
-    title: 'AI & Deployment',
-    skills: ['Prompt Engineering', 'AI Debugging', 'Hosting', 'Domain setup'],
+    title: 'Cloud & Deployment',
+    skills: ['Vercel', 'Netlify', 'Hosting', 'Domain setup', 'Cpanel'],
   },
 ];
 

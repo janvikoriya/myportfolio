@@ -1,10 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,36 +54,104 @@ const Navbar = () => {
           JK.
         </motion.div>
 
-        <div style={{ display: 'flex', gap: '32px' }}>
-          {navLinks.map((link) => (
+        {/* Desktop Links */}
+        <div style={{ display: 'none' }} className="desktop-nav">
+          <div style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
+            {navLinks.map((link) => (
+              <motion.a
+                key={link.name}
+                href={link.href}
+                whileHover={{ color: 'var(--primary)', y: -2 }}
+                style={{
+                  fontSize: '0.9rem',
+                  fontWeight: '500',
+                  color: isScrolled ? '#fff' : '#ccc',
+                  transition: 'color 0.3s ease'
+                }}
+              >
+                {link.name}
+              </motion.a>
+            ))}
             <motion.a
-              key={link.name}
-              href={link.href}
-              whileHover={{ color: 'var(--primary)', y: -2 }}
-              style={{
-                fontSize: '0.9rem',
-                fontWeight: '500',
-                color: isScrolled ? '#fff' : '#ccc',
-                transition: 'color 0.3s ease'
-              }}
+              href="/resume.pdf"
+              target="_blank"
+              download
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="glow-button"
+              style={{ padding: '8px 20px', fontSize: '0.85rem' }}
             >
-              {link.name}
+              Resume
             </motion.a>
-          ))}
+          </div>
         </div>
 
-        <motion.a
-          href="/resume.pdf"
-          target="_blank"
-          download
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          className="glow-button"
-          style={{ padding: '8px 20px', fontSize: '0.85rem' }}
-        >
-          Resume
-        </motion.a>
+        {/* Mobile Toggle */}
+        <div className="mobile-toggle" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} style={{ cursor: 'pointer', display: 'block' }}>
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="glass"
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              right: 0,
+              padding: '24px',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '20px',
+              borderTop: '1px solid var(--glass-border)'
+            }}
+          >
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{ fontSize: '1.1rem', fontWeight: '500' }}
+              >
+                {link.name}
+              </a>
+            ))}
+            <a
+              href="/resume.pdf"
+              target="_blank"
+              download
+              className="glow-button"
+              style={{ textAlign: 'center' }}
+            >
+              Resume
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <style jsx>{`
+        .desktop-nav {
+          display: none !important;
+        }
+        .mobile-toggle {
+          display: block !important;
+        }
+
+        @media (min-width: 768px) {
+          .desktop-nav {
+            display: block !important;
+          }
+          .mobile-toggle {
+            display: none !important;
+          }
+        }
+      `}</style>
     </motion.nav>
   );
 };

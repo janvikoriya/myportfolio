@@ -68,7 +68,7 @@ export default function BackgroundEffect() {
       zIndex: -10,
       overflow: 'hidden',
       pointerEvents: 'none',
-      backgroundColor: 'var(--background)'
+      backgroundColor: 'transparent'
     }}>
       {/* Grid Pattern */}
       <div 

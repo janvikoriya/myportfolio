@@ -13,14 +13,72 @@ const AIChat = () => {
 
   const handleSend = () => {
     if (!input.trim()) return;
+    const userMessage = input.toLowerCase();
     const newMessages = [...messages, { role: 'user', content: input }];
     setMessages(newMessages);
     setInput('');
 
-    // Mock bot response
+    // Comprehensive Q&A Logic
     setTimeout(() => {
-      setMessages([...newMessages, { role: 'bot', content: 'That\'s a great question! Janvi has extensive experience in React, Node.js, and modern web tech. You can see her projects above!' }]);
-    }, 1000);
+      let botResponse = "I'm not exactly sure about that. Please contact her directly for more details!";
+
+      // Basic Intro
+      if (userMessage.includes('who are you')) {
+        botResponse = "I’m Janvi’s AI Assistant 🤖 I can help you explore her projects, skills, and experience.";
+      } else if (userMessage.includes('who is janvi')) {
+        botResponse = "Janvi is an AI Software Developer & Full Stack Engineer focused on building scalable and performance-driven web applications.";
+      } 
+      // Frontend & Design
+      else if (userMessage.includes('frontend developer')) {
+        botResponse = "Yes, Janvi builds responsive and modern UI using HTML, CSS, JavaScript, and works on improving user experience.";
+      } else if (userMessage.includes('responsive design')) {
+        botResponse = "Absolutely. All her websites are mobile-friendly and optimized for different screen sizes.";
+      }
+      // Projects
+      else if (userMessage.includes('show me your projects') || userMessage.includes('your projects')) {
+        botResponse = "Janvi has built multiple projects including a recipe web app using Node.js, Express, and MongoDB, along with dynamic websites and e-commerce platforms.";
+      } else if (userMessage.includes('best project')) {
+        botResponse = "One of her key projects is a full-stack recipe platform where users can add, manage, and view recipes with user authentication.";
+      }
+      // Skills & Tools
+      else if (userMessage.includes('what skills') || userMessage.includes('skills do you have')) {
+        botResponse = "Janvi works with HTML, CSS, JavaScript, PHP, MySQL, Node.js, Express, and MongoDB.";
+      } else if (userMessage.includes('tools') || userMessage.includes('technologies')) {
+        botResponse = "Git, GitHub, Postman, VS Code, Vercel, Netlify, and database tools.";
+      }
+      // Work / Experience / Hire
+      else if (userMessage.includes('experience')) {
+        botResponse = "Yes, Janvi has experience building websites for businesses and personal brands, focusing on performance and user experience.";
+      } else if (userMessage.includes('live projects')) {
+        botResponse = "Yes, she has developed and deployed live websites, including e-commerce and service-based platforms.";
+      } else if (userMessage.includes('why should i hire') || userMessage.includes('hire you')) {
+        botResponse = "Janvi focuses on clean code, scalable solutions, and delivering real-world projects that actually perform.";
+      }
+      // Goal & Extra
+      else if (userMessage.includes('what is your goal') || userMessage.includes('your goal')) {
+        botResponse = "To become a highly skilled AI & Full Stack Developer and build impactful digital products.";
+      } else if (userMessage.includes('what makes you different') || userMessage.includes('different')) {
+        botResponse = "Janvi focuses on building production-ready systems with scalability, clean UI, and efficient backend architecture.";
+      } else if (userMessage.includes('handle deployment') || userMessage.includes('deployment')) {
+        botResponse = "Yes, she can manage domain setup, hosting, and deployment on platforms like Vercel and Netlify.";
+      }
+      // Contact
+      else if (userMessage.includes('how can i contact') || userMessage.includes('contact you')) {
+        botResponse = "You can reach Janvi through the contact section on this website or connect via email or LinkedIn.";
+      } else if (userMessage.includes('available for work')) {
+        botResponse = "Yes, Janvi is open to freelance projects, internships, and full-time opportunities.";
+      }
+      // Conversational
+      else if (userMessage.includes('hello') || userMessage.includes('hi') || userMessage.includes('hey')) {
+        botResponse = "Hey 👋 How can I help you explore Janvi’s work today?";
+      } else if (userMessage.includes('thank you') || userMessage.includes('thanks')) {
+        botResponse = "You’re welcome 😊 Feel free to ask anything else!";
+      } else if (userMessage.includes('bye') || userMessage.includes('goodbye')) {
+        botResponse = "Bye! Have a great day 🚀";
+      }
+
+      setMessages(prev => [...prev, { role: 'bot', content: botResponse }]);
+    }, 800);
   };
 
   return (
@@ -60,9 +118,12 @@ const AIChat = () => {
             style={{
               position: 'fixed',
               bottom: '100px',
-              right: '30px',
-              width: '350px',
+              right: '20px',
+              left: '20px',
+              maxWidth: '350px',
+              marginLeft: 'auto',
               height: '450px',
+              maxHeight: '70vh',
               borderRadius: '20px',
               zIndex: 100,
               display: 'flex',
