@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   keywords: ["Janvi Koriya", "AI Software Developer", "Full Stack Engineer", "GenAI", "React Developer", "Next.js"],
   icons: {
     icon: "/laptop.png",
+    shortcut: "/laptop.png",
+    apple: "/laptop.png",
   },
 };
 
