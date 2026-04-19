@@ -6,7 +6,7 @@ import Projects from '@/components/Projects';
 import Experience from '@/components/Experience';
 import Services from '@/components/Services';
 import Contact from '@/components/Contact';
-import AIChat from '@/components/AIChat';
+import ScrollToTop from '@/components/ScrollToTop';
 import Background3D from '@/components/Background3D';
 
 export default function Home() {
@@ -25,7 +25,7 @@ export default function Home() {
         <Contact />
       </div>
 
-      <AIChat />
+      <ScrollToTop />
 
       <footer style={{
         padding: '40px 24px',
