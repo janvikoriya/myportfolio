@@ -8,14 +8,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Janvi Koriya | AI Software Developer & Full Stack Engineer",
+  title: "Janvi Koriya - Portfolio",
   description: "AI Software Developer building scalable web applications and GenAI features with a focus on high-performance digital products.",
   keywords: ["Janvi Koriya", "AI Software Developer", "Full Stack Engineer", "GenAI", "React Developer", "Next.js"],
-  icons: {
-    icon: "/laptop.png",
-    shortcut: "/laptop.png",
-    apple: "/laptop.png",
-  },
 };
 
 import BackgroundEffect from "@/components/BackgroundEffect";

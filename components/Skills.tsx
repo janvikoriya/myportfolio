@@ -38,7 +38,7 @@ const Skills = () => {
         <p style={{ color: '#aaa', fontSize: '1.1rem' }}>A comprehensive set of tools and technologies I use to bring ideas to life.</p>
       </motion.div>
 
-      <motion.div 
+      <motion.div
         variants={{
           hidden: { opacity: 0 },
           show: {
@@ -67,9 +67,9 @@ const Skills = () => {
               {cat.skills.map(skill => (
                 <motion.span
                   key={skill}
-                  whileHover={{ 
-                    scale: 1.05, 
-                    borderColor: 'var(--primary)', 
+                  whileHover={{
+                    scale: 1.05,
+                    borderColor: 'var(--primary)',
                     color: '#fff',
                     backgroundColor: 'rgba(0, 242, 255, 0.05)'
                   }}
