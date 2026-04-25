@@ -24,6 +24,9 @@ const About = () => {
               Alongside development, I have hands-on experience in <span style={{ color: 'var(--primary)' }}>QA testing</span>, ensuring applications are reliable, bug-free, and work smoothly across different devices and browsers. I also have a basic understanding of <span style={{ color: 'var(--primary)' }}>domain and server management</span>, including deploying websites, handling hosting environments, and managing live projects.
             </p>
             <p>
+              In addition to my technical skills, I am an experienced <span style={{ color: 'var(--primary)' }}>Project Coordinator</span>, proficient in managing project lifecycles from requirement gathering to final delivery. I excel at <span style={{ color: 'var(--primary)' }}>team coordination and client communication</span>, ensuring that tasks are managed efficiently and milestones are met on time.
+            </p>
+            <p>
               I’m continuously learning and improving my skills to build <span style={{ color: 'var(--primary)' }}>smarter, more scalable</span> digital products that deliver real-world impact.
             </p>
           </div>
@@ -56,7 +59,7 @@ const About = () => {
             {[
               "Full Stack Dev", "React & Node.js", 
               "PHP & MySQL", "QA & Testing", 
-              "Live Deployment", "Server Mgmt"
+              "Live Deployment", "Project Coordination"
             ].map(item => (
               <motion.li 
                 key={item}

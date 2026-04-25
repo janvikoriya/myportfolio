@@ -19,6 +19,19 @@ const skillCategories = [
     title: 'Cloud & Deployment',
     skills: ['Vercel', 'Netlify', 'Hosting', 'Domain setup', 'Cpanel'],
   },
+  {
+    title: 'Project Coordination',
+    skills: [
+      'Project Planning',
+      'Team Coordination',
+      'Client Communication',
+      'Task Management',
+      'Documentation',
+      'Reporting',
+      'Requirement Gathering',
+      'Meeting Coordination'
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -51,7 +64,7 @@ const Skills = () => {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="grid-cols grid-2"
+        className="grid-cols grid-3"
       >
         {skillCategories.map((cat, idx) => (
           <motion.div
