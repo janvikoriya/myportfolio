@@ -54,7 +54,7 @@ const Contact = () => {
           display: 'block',
           marginBottom: '12px'
         }}>
-          06. Connect
+          07. Connect
         </span>
         <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', marginBottom: '20px', fontWeight: '800' }}>
           Get In <span className="gradient-text">Touch</span>

@@ -57,7 +57,7 @@ const Experience = () => {
           </ul>
         </motion.div>
 
-        {/* Role 2: LogicNest Full Stack */}
+        {/* Role 2: AI Video Creator */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -76,21 +76,21 @@ const Experience = () => {
             boxShadow: '0 0 10px var(--primary-glow)'
           }} />
 
-          <h3 style={{ fontSize: '1.4rem', color: '#fff' }}>Full Stack Developer | MERN <span className="gradient-text">@ LogicNest Technology</span></h3>
-          <p style={{ color: 'var(--text-muted)', marginBottom: '16px', fontSize: '0.9rem' }}>Rajkot</p>
+          <h3 style={{ fontSize: '1.4rem', color: '#fff' }}>AI Video Creator <span className="gradient-text">@ Self-Employed</span></h3>
+          <p style={{ color: 'var(--text-muted)', marginBottom: '16px', fontSize: '0.9rem' }}>Remote</p>
 
           <ul style={{ listStyle: 'none', color: '#ccc', lineHeight: '1.7', display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Delivered end-to-end features from requirement analysis to deployment.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Created AI-generated videos and cinematic visual content using generative AI tools and prompt engineering.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Developed and maintained full-stack applications using MERN stack.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Developed engaging short-form video content with AI voiceovers, subtitles, transitions, and visual effects.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Optimized application performance and maintained code quality.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Optimized AI video workflows for faster content production and improved creative output.
             </li>
             <li style={{ display: 'flex', gap: '12px' }}>
-              <span style={{ color: 'var(--primary)' }}>▹</span> Built secure RESTful APIs with authentication & role-based access control.
+              <span style={{ color: 'var(--primary)' }}>▹</span> Collaborated with teams to produce AI-powered promotional and social media content for digital platforms.
             </li>
           </ul>
         </motion.div>

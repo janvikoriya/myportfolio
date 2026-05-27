@@ -21,6 +21,8 @@ const Navbar = () => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Education', href: '#education' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -70,7 +72,7 @@ const Navbar = () => {
             position: 'relative'
           }}>
             <img 
-              src="/laptop.png" 
+              src="/favicon.png" 
               alt="Logo" 
               style={{ width: '100%', height: '100%', objectFit: 'contain' }}
             />
@@ -99,7 +101,7 @@ const Navbar = () => {
               </motion.a>
             ))}
             <motion.a
-              href="/jk.pdf"
+              href="/janvi_koriya.pdf"
               target="_blank"
               download
               whileHover={{ scale: 1.05, background: '#f0f0f0' }}
@@ -194,7 +196,7 @@ const Navbar = () => {
                 </a>
               ))}
               <a
-                href="/jk.pdf"
+                href="/janvi_koriya.pdf"
                 target="_blank"
                 download
                 style={{

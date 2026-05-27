@@ -11,6 +11,13 @@ export const metadata: Metadata = {
   title: "Janvi Koriya - Portfolio",
   description: "AI Software Developer building scalable web applications and GenAI features with a focus on high-performance digital products.",
   keywords: ["Janvi Koriya", "AI Software Developer", "Full Stack Engineer", "GenAI", "React Developer", "Next.js"],
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+  },
 };
 
 import BackgroundEffect from "@/components/BackgroundEffect";

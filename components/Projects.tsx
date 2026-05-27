@@ -34,7 +34,7 @@ const projects = [
     link: 'https://kortexhardware.com/',
   },
   {
-    title: 'Kodoya Systems',
+    title: 'Attendance System',
     desc: 'Advanced workflow and design platform with secure employee management. Use Credentials ID: Emp001 | Pass: 123456',
     tech: ['PHP', 'MySQL', 'Workflow Design', 'Management'],
     image: '/nexvity_new.png', // Using a premium placeholder

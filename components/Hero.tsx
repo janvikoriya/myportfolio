@@ -39,7 +39,7 @@ const Hero = () => {
             transition={{ delay: 0.8, duration: 0.8 }}
             style={{ display: 'flex', gap: '16px', justifyContent: 'center' }}
           >
-            <a href="/jk.pdf" target="_blank" download className="glow-button">Download Resume</a>
+            <a href="/janvi_koriya.pdf" target="_blank" download className="glow-button">Download Resume</a>
             <a href="#contact" style={{
               background: 'transparent',
               border: '1px solid rgba(255,255,255,0.2)',
